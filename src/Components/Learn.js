@@ -43,7 +43,7 @@ function Learn() {
                   <h5 className="card-title">{module.title}</h5>
                   <p className="card-text">{module.description}</p>
                   <button 
-                    className="btn btn-primary mt-auto" 
+                    className="btn btn-info mt-auto" 
                     onClick={() => handleModuleStart(module.route)}
                   >
                     Start Module
