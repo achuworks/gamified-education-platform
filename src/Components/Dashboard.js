@@ -1,10 +1,13 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Trophy, MoreHorizontal, Search, BookOpen, LayoutDashboard, Award ,Zap} from 'lucide-react';
 import logo from '../logo.png';
 import './Dashstyle.css';
-import profile from '../ll.png'
+import profile from '../ll.png';
+import Login from './Login';
 
 function Dashboard() {
+    const [showlogin,setshowlogin]=useState(false);
+
     return (
         <div className="min-vh-100 bg-light text-dark">
             <nav className="navbar navbar-expand-lg navbar-dark bg-darker-blue px-3">
@@ -36,8 +39,8 @@ function Dashboard() {
                             <span>Badges earned</span>
                         </a>
                     </div>
-
                     <div className="ms-auto d-flex align-items-center gap-3">
+                    <button type="button" class="btn btn-outline-warning" onClick={() => setshowlogin(!showlogin)}><strong>Login/Register</strong></button>
                     <div className="d-flex align-items-center">
                             <Zap size={30} className="text-warning" />
                             <span className="text-light ms-2 fw-bold" style={{ fontSize: '1.5rem' }}>5</span>
@@ -59,16 +62,11 @@ function Dashboard() {
                 </div>
             </nav>
             <div className="container py-5">
-                <div className="d-flex justify-content-between">
-                    <div>
-                        <h1 className="display-4 mb-2 text-dark">Hey Archana S!</h1> 
-                        <p className="text-secondary">Let's jump in!</p>
-                    </div>
-                    <div className="bg-light p-4 rounded">
-                        <div className="display-4 mb-1 text-dark">100 Questions</div>
-                        <div className="text-secondary">Answered this week.</div> 
-                    </div>
-                </div>
+                {showlogin?(
+                    <Login />
+                ):(
+                    <p>Not logged in</p>
+                )}
             </div>
         </div>
     );
