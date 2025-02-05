@@ -19,7 +19,7 @@ function Login() {
       })
       .catch(err => {
         console.error(err);
-        alert('Login failed!');
+        alert(err);
       });
   }
 
