@@ -3,6 +3,8 @@ import Login from './Login';
 
 function Signup() {
   const [login, setLogin] = useState(false);
+  const [unameoremail,setunameoremail] = useState('');
+  const [password,setpassword] = useState('');
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -25,7 +27,7 @@ function Signup() {
         body: JSON.stringify(formData),
       });
       const result = await response.json();
-      alert(result); // Show success message
+      alert(result); 
     } catch (error) {
       console.error("Error:", error);
     }
