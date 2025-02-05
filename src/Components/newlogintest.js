@@ -8,10 +8,20 @@ function Newlogintest() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    axios.post('http://localhost:8081/login', { uname, email, password })
-      .then(res => console.log(res))
-      .catch(err => console.log(err));
+    axios.post('http://localhost:8081/login', { username: uname, email, password })
+      .then(res => {
+        if (res.status === 200) {
+          alert('Login successful!');
+        } else {
+          alert('Login failed!');
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        alert('An error occurred during login.');
+      });
   }
+  
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 bg-light">

@@ -1,13 +1,30 @@
 import React, { useState } from 'react';
 import Signup from './Signup';
+import axios from 'axios';
 
 function Login() {
   
   const [signup, setsignup] = useState(false);
+  const [uname, setUname] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+ 
+  function handleSubmit(event) {
+    event.preventDefault();
+    axios.post('http://localhost:8081/login', { username: uname, email, password })
+      .then(res => {
+        if (res.status === 200) {
+          alert('Login successful!');
+        } else {
+          alert('Login failed!');
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        alert('An error occurred during login.');
+      });
+  }
 
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
