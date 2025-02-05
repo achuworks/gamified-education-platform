@@ -15,8 +15,8 @@ const db = mysql.createConnection({
 
 
 app.post('/login', (req, res) => {
-    const sql = "SELECT * FROM users WHERE username = ?  email = ? AND password = ?";
-    db.query(sql, [req.body.username, req.body.email, req.body.password], (err, data) => {
+    const sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+    db.query(sql, [req.body.username, req.body.password], (err, data) => {  // Removed req.body.email
         if (err) {
             console.error(err);
             return res.status(500).json("Internal server error");
@@ -28,6 +28,7 @@ app.post('/login', (req, res) => {
         }
     });
 });
+
 
 
 app.post('/signup', (req, res) => {
