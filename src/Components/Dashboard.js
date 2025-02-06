@@ -5,7 +5,9 @@ import logo from '../logo.png';
 import './Dashstyle.css';
 import profile from '../ll.png';
 import Login from './Login';
-import Learn from './Learn'; // Import your Learn component
+import Learn from './Learn'; 
+import Questweek from './Questweek'; 
+import Stats from './stats';
 
 function Dashboard() {
     const [showlogin, setshowlogin] = useState(false);
@@ -66,6 +68,8 @@ function Dashboard() {
                     ) : (
                         <p>Not logged in</p>
                     )}
+                    <Questweek />
+                    <Stats />
                 </div>
                 <Routes>
                     <Route path="/learn" element={<Learn />} />
