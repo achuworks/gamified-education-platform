@@ -13,7 +13,7 @@ function Dashboard() {
     const user = JSON.parse(sessionStorage.getItem('user'));   
     return (
         <>
-        <Navbar expand="lg" className="bg-dark px-3"  >
+        <Navbar expand="lg" className="bg-dark px-8 " style={{ width: '100%' }}  >
             <Container>
                 <Navbar.Brand style={{ cursor: 'pointer' }}>
                     <img src={logo} alt="CyberQuestLogo" width="130" height="90" />
