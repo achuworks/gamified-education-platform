@@ -8,11 +8,14 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+const user = JSON.parse(sessionStorage.getItem('user'));   
 const Maindashboard = () => {
   return (
     <>
       <Dashboard />
-      <Container fluid>
+      {user ? (
+
+          <Container fluid>
         <Row className="mt-4 g-4">
 
           <Col lg={7} md={12}>
@@ -31,6 +34,9 @@ const Maindashboard = () => {
           </Col>
         </Row>
       </Container>
+    ):(
+        <h2>Login to see your progress</h2>
+    )}
     </>
   );
 };
