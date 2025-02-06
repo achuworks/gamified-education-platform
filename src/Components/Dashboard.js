@@ -13,7 +13,7 @@ function Dashboard() {
     const user = JSON.parse(sessionStorage.getItem('user'));   
     return (
         <>
-        <Navbar expand="lg" className="bg-dark px-3">
+        <Navbar expand="lg" className="bg-dark px-3"  >
             <Container>
                 <Navbar.Brand style={{ cursor: 'pointer' }}>
                     <img src={logo} alt="CyberQuestLogo" width="130" height="90" />
@@ -30,7 +30,7 @@ function Dashboard() {
                             <BookOpen size={40} className="me-2 text-danger" />
                             Learn
                         </Nav.Link>
-                        <Nav.Link className="text-light d-flex align-items-center">
+                        <Nav.Link href='/leader' className="text-light d-flex align-items-center">
                             <Trophy size={40} className="me-2 text-warning" />
                             Compete
                         </Nav.Link>

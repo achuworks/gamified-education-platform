@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
-}
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0c0c0c;
+  color: rgb(254, 252, 252);
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Leaderboard Container */
+.leaderboard {
+  text-align: center;
+  padding: 50px;
+  background-color: #1a1a1a; /* Slight contrast for the leaderboard container */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  max-width: 900px; /* Increased max-width for a wider layout */
+  width: 100%;
+}
+
+.leaderboard h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #00c853; /* Green color for the heading */
+}
+
+.leaderboard p {
+  color: #b0b0b0;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+/* Buttons */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Increased gap between buttons */
+  margin-bottom: 20px;
+}
+
+.filters button {
+  background-color: #333;
   color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.filters button.active,
+.filters button:hover {
+  background-color: #00c853; /* Hover and active color same for consistency */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Slight shadow on hover */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Leaderboard List */
+.leaderboard-list {
+  max-width: 800px; /* Adjusted for better responsiveness */
+  margin: 0 auto;
+}
+
+.leaderboard-item {
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  padding: 15px;
+  margin-bottom: 15px; /* Increased margin for better spacing */
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.leaderboard-item:hover {
+  background-color: #333; /* Hover effect for leaderboard item */
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+
+
+
+.leaderboard-item img {
+  width: 60px; /* Slightly larger avatar */
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 20px; /* Increased margin between avatar and text */
+  margin-left: 20px;
+}
+
+.user-info {
+  flex: 1;
+  text-align: left;
+}
+
+.user-info h2 {
+  font-size: 1.3rem;
+  margin: 0;
+  color: #f5fdf8; /* Lighter color for better contrast */
+}
+
+.user-info p {
+  margin: 5px 0;
+  color: #b0b0b0; /* Adjusted color for better readability */
+  font-size: 1rem;
 }
