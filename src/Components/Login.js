@@ -13,6 +13,7 @@ function Login() {
       .then(res => {
         if (res.status === 200) {
           alert('Login successful!');
+          window.location.href = '/';
         } else {
           alert('Login failed!');
         }

@@ -39,7 +39,8 @@ const QuestionsChart = () => {
       borderRadius: '8px',
       height: '250px',  
       padding: '15px',
-      width: '50%'
+      width: '50%',
+      paddingTop:'50px'
     }}>
       <div style={{ marginBottom: '5px' }}>
         <h4 style={{ 

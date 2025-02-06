@@ -1,11 +1,7 @@
-
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Dashboard from './Components/Dashboard';
+import Learn from './Components/Learn';  // Renamed for consistency
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './Components/Login';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-
 
 function App() {
   return (
@@ -13,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/learn" element={<Learn />} />  {/* Updated name */}
       </Routes>
     </Router>
   );

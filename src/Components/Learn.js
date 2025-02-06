@@ -1,6 +1,7 @@
 import React from 'react';
 import phishingImage from '../images/phishing.jpg';
 import ransomImage from '../images/rasnom.jpg';
+import Dashboard from './Dashboard';
 
 
 
@@ -28,6 +29,8 @@ function Learn() {
     }
     
     return (
+      <>
+      <Dashboard />
       <div className="container mt-5">
         <h1 className="text-center mb-4"></h1>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -38,14 +41,14 @@ function Learn() {
                   src={module.image} 
                   className="card-img-top" 
                   alt={module.title}
-                />
+                  />
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title">{module.title}</h5>
                   <p className="card-text">{module.description}</p>
                   <button 
                     className="btn btn-info mt-auto" 
                     onClick={() => handleModuleStart(module.route)}
-                  >
+                    >
                     Start Module
                   </button>
                 </div>
@@ -54,6 +57,7 @@ function Learn() {
           ))}
         </div>
       </div>
+    </>
     );
   }
   export default Learn;
