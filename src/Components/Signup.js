@@ -28,6 +28,7 @@ function Signup() {
       });
       const result = await response.json();
       alert(result); 
+      window.location.href = '/login';
     } catch (error) {
       console.error("Error:", error);
     }

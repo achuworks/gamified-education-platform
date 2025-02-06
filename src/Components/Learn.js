@@ -28,10 +28,12 @@ function Learn() {
       console.log(`Navigating to module: ${route}`);
     }
     
+    const user = JSON.parse(sessionStorage.getItem('user'));    
     return (
       <>
       <Dashboard />
-      <div className="container mt-5">
+      {user ? (
+        <div className="container mt-5">
         <h1 className="text-center mb-4"></h1>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           {modules.map((module) => (
@@ -57,6 +59,11 @@ function Learn() {
           ))}
         </div>
       </div>
+        ):(
+          <>
+          <h2>Login first to go to learning page</h2>
+          </>
+        )}
     </>
     );
   }

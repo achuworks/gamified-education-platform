@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Signup from './Signup';
 import axios from 'axios';
 
+
 function Login() {
   const [signup, setSignup] = useState(false);
   const [username, setUsername] = useState('');
@@ -14,6 +15,7 @@ function Login() {
         if (res.status === 200) {
           alert('Login successful!');
           window.location.href = '/';
+          sessionStorage.setItem('user', JSON.stringify({ username: username }));
         } else {
           alert('Login failed!');
         }

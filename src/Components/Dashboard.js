@@ -6,11 +6,11 @@ import { Trophy, BookOpen, LayoutDashboard, Award, Zap } from 'lucide-react';
 import logo from '../logo.png';
 import profile from '../ll.png';
 import './Dashstyle.css';
-
+import { useState } from 'react';
 
 function Dashboard() {
-    
-
+    const [isclicked,setclicked] = useState(false);
+    const user = JSON.parse(sessionStorage.getItem('user'));   
     return (
         <>
         <Navbar expand="lg" className="bg-dark px-3">
@@ -40,16 +40,28 @@ function Dashboard() {
                         </Nav.Link>
                     </Nav>
                     <div className="d-flex align-items-center gap-3">
-                    <button className="btn btn-outline-warning fw-bold px-3" onClick={() => window.location.href = "/login"}>
-    Login/Register
-</button>
+        {user?(
+            
+            <h3 style={{color:"white"}}>{user.username}</h3>
+        ):(
+            <button className="btn btn-outline-warning fw-bold px-3" onClick={() => window.location.href = "/login"}>
+            Login/Register
+            </button>
+        )}
 
                         <div className="d-flex align-items-center">
                             <Zap size={25} className="text-warning" />
                             <span className="text-white ms-2 fw-bold" style={{ fontSize: '1.2rem' }}>5</span>
                         </div>
                         <div className="rounded-circle overflow-hidden" style={{ width: '50px', height: '50px', border: '2px solid white' }}>
-                            <img src={profile} alt="Profile Icon" className="w-100 h-100 object-cover" />
+                            <img src={profile} alt="Profile Icon" className="w-100 h-100 object-cover" onClick={() => setclicked(!isclicked) }  />
+                            {isclicked && (
+                <ul className="dropdown-menu show">
+                    <li><a className="dropdown-item" href="/profile">Profile</a></li>
+                    <li><a className="dropdown-item" href="/settings">Settings</a></li>
+                    <li><button className="dropdown-item text-danger" onClick={() => { sessionStorage.removeItem('user'); window.location.reload(); }}>Logout</button></li>
+                </ul>
+            )}
                         </div>
                     </div>
                 </Navbar.Collapse>
