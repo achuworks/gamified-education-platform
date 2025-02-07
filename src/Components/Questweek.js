@@ -5,13 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Questweek = () => {
   const data = [
-    { date: "Sunday, Feb 2nd", questions: 1 },
-    { date: "Monday, Feb 3rd", questions: 0 },
-    { date: "Tuesday, Feb 4th", questions: 0 },
-    { date: "Wednesday, Feb 5th", questions: 0 },
-    { date: "Thursday, Feb 6th", questions: 0 },
-    { date: "Friday, Feb 7th", questions: 0 },
-    { date: "Saturday, Feb 8th", questions: 0 }
+    { date: "Sunday, Feb 9nd", questions: 5 },
+    { date: "Monday, Feb 10rd", questions: 0 },
+    { date: "Tuesday, Feb 11th", questions: 0 },
+    { date: "Wednesday, Feb 12th", questions: 0 },
+    { date: "Thursday, Feb 13th", questions: 0 },
+    { date: "Friday, Feb 14th", questions: 0 },
+    { date: "Saturday, Feb 8th", questions: 25 }
   ];
 
   const CustomTooltip = ({ active, payload, label }) => {
@@ -25,7 +25,7 @@ const Questweek = () => {
         }}>
           <p style={{ color: '#fff', margin: '0', fontSize: '14px' }}>{label}</p>
           <p style={{ color: '#fff', margin: '0', fontSize: '14px' }}>
-            {'${payload[0].value} questions'}
+            {payload[0].value} questions
           </p>
         </div>
       );

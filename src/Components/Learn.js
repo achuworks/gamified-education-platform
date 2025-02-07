@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import phishingImage from '../images/phishing.jpg';
 import ransomImage from '../images/rasnom.jpg';
-import Intro from '../images/introtocybersecurity.jpg';
 import Dashboard from './Dashboard';
 import './Learn.css';
 import intro from '../Videos/intro.mp4';
@@ -10,8 +9,7 @@ import types from '../Videos/typesofattacks.mp4';
 import spot from '../Videos/spotphish.mp4';
 import phish3 from '../Videos/typesofattacks.mp4'
 import defense from '../Videos/defense.mp4'
-
-
+import QuizPoints from './QuizPoints';
 
 const modules = [
   {
@@ -43,6 +41,7 @@ const modules = [
 function Learn() {
   const [activeModule, setActiveModule] = useState(null);
   const [activeLevel, setActiveLevel] = useState(null);
+  const [showPointsModal, setShowPointsModal] = useState(false);
 
   function handleModuleStart(module) {
     setActiveModule(module);
@@ -55,6 +54,10 @@ function Learn() {
     console.log(`Navigating to level: ${level.title}`);
   }
 
+  function handleQuizCompletion() {
+    setShowPointsModal(true);
+  }
+
   const user = JSON.parse(sessionStorage.getItem('user'));
 
   return (
@@ -62,7 +65,6 @@ function Learn() {
       <Dashboard />
       {user ? (
         <div className="container mt-5">
-          <h1 className="text-center mb-4"></h1>
           {activeLevel ? (
             <div className="video-container">
               <h5 className="text-center">{activeLevel.title}</h5>
@@ -78,11 +80,14 @@ function Learn() {
                 Back to Levels
               </button>
               <button
-  className="d-flex justify-content-end mt-3 btn btn-info"
-  onClick={() => window.location.href = activeLevel.quizUrl}
->
-  Take Quiz---
-</button>
+                className="d-flex justify-content-end mt-3 btn btn-info"
+                onClick={() => {
+                  window.open(activeLevel.quizUrl, '_blank');
+                  setTimeout(handleQuizCompletion, 2000);
+                }}
+              >
+                Take Quiz---
+              </button>
             </div>
           ) : activeModule ? (
             <div className="d-flex flex-column align-items-center">
@@ -134,11 +139,13 @@ function Learn() {
               ))}
             </div>
           )}
+          <QuizPoints
+            show={showPointsModal} 
+            onHide={() => setShowPointsModal(false)} 
+          />
         </div>
       ) : (
-        <>
-          <h2>Login first to go to learning page</h2>
-        </>
+        <h2>Login first to go to learning page</h2>
       )}
     </>
   );
