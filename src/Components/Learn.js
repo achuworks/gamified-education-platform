@@ -5,6 +5,13 @@ import Intro from '../images/introtocybersecurity.jpg';
 import Dashboard from './Dashboard';
 import './Learn.css';
 import intro from '../Videos/intro.mp4';
+import phishing1 from '../Videos/phishing1.mp4'
+import types from '../Videos/typesofattacks.mp4';
+import spot from '../Videos/spotphish.mp4';
+import phish3 from '../Videos/typesofattacks.mp4'
+import defense from '../Videos/defense.mp4'
+
+
 
 const modules = [
   {
@@ -14,9 +21,9 @@ const modules = [
     image: ransomImage,
     route: '/module/introtoallattacks',
     levels: [
-      { id: 1, title: 'Level 1: Introduction to Cybersecurity', description: 'Brief overview of cybersecurity and the importance of staying protected online.', video: intro },
-      { id: 2, title: 'Level 2: Types of Attacks', description: 'Explore and defend against various cyber-attacks through interactive missions and challenges.' },
-      { id: 3, title: 'Level 3: Defense Mechanisms', description: 'Learn and apply effective strategies to protect against cyber threats through hands-on defense challenges.' },
+      { id: 1, title: 'Level 1: Introduction to Cybersecurity', description: 'Brief overview of cybersecurity and the importance of staying protected online.', quizUrl:'https://forms.fillout.com/t/fBn78KyDpzus' ,video:intro},
+      { id: 2, title: 'Level 2: Types of Attacks', description: 'Explore and defend against various cyber-attacks through interactive missions and challenges.',quizUrl:'https://forms.fillout.com/t/tVmzFQUncWus',video:types },
+      { id: 3, title: 'Level 3: Defense Mechanisms', description: 'Learn and apply effective strategies to protect against cyber threats through hands-on defense challenges.',quizUrl:'https://forms.fillout.com/t/f7C7ZMnUxaus',video:defense },
     ],
   },
   {
@@ -26,9 +33,9 @@ const modules = [
     image: phishingImage,
     route: '/module/phishing',
     levels: [
-      { id: 1, title: 'Level 1: Introduction to Phishing', description: 'Understand what phishing is.' },
-      { id: 2, title: 'Level 2: Identifying Phishing Emails', description: 'Learn to spot phishing emails.' },
-      { id: 3, title: 'Level 3: Protecting Yourself', description: 'Learn how to protect yourself from phishing.' },
+      { id: 1, title: 'Level 1: Introduction to Phishing', description: 'Understand what phishing is.',quizUrl:'https://forms.fillout.com/t/987kHSkGZpus',video:phishing1},
+      { id: 2, title: 'Level 2: Identifying Phishing Emails', description: 'Learn to spot phishing emails.',quizUrl:'https://forms.fillout.com/t/dipJuBJCsmus',video:spot},
+      { id: 3, title: 'Level 3: Protecting Yourself', description: 'Learn how to protect yourself from phishing.',quizUrl:'https://forms.fillout.com/t/192VZ3pggAus',video:phish3},
     ],
   },
 ];
@@ -72,7 +79,7 @@ function Learn() {
               </button>
               <button
   className="d-flex justify-content-end mt-3 btn btn-info"
-  onClick={() => window.location.href = 'https://forms.fillout.com/t/fBn78KyDpzus'}
+  onClick={() => window.location.href = activeLevel.quizUrl}
 >
   Take Quiz---
 </button>
