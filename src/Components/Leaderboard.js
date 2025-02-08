@@ -1,13 +1,17 @@
 import React from "react";
-import leaderboardData from "./LeaderboardData";  // Corrected import path with proper casing
-import "../App.css";  // Corrected path to App.css
+import leaderboardData from "./LeaderboardData";  
+import "../App.css";  
 import Dashboard from "./Dashboard";
+
+const user = JSON.parse(sessionStorage.getItem('user'));  
 
 const Leaderboard = () => {
   return (
     <>
     <Dashboard/>
-    <div style={{paddingLeft:"270px",paddingTop:"50px"}} >
+    {user?(
+
+      <div style={{paddingLeft:"270px",paddingTop:"50px"}} >
     <div className="leaderboard"  >
       <h1>Leaderboards</h1>
       <p>Welcome to the wall of fame - Here are our top 50 users.</p>
@@ -33,6 +37,11 @@ const Leaderboard = () => {
       </div>
     </div>
         </div>
+  ):(
+    <h2>
+      Login to see the leaderboard status 
+    </h2>
+  )}
     </>
   );
 };
