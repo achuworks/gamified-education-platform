@@ -5,6 +5,8 @@ import Login from './Components/Login';
 import Maindashboard from './Components/content';
 import Leaderboard from './Components/Leaderboard';
 import Roadmap from './Components/Roadmap';
+import LearningPath from './Components/Map';
+
 
 function App() {
   return (
@@ -14,7 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/learn" element={<Learn />} />
         <Route path="/leader" element={<Leaderboard/>}/> 
-        <Route path="/roadmap" element={<Roadmap />}/>
+        <Route path="/roadmap" element={<LearningPath />}/>
       </Routes>
     </Router>
   );

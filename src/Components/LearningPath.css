@@ -1,0 +1,39 @@
+.path-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 50px;
+  }
+  
+  .path-line {
+    position: absolute;
+    top: 50%;
+    width: 80%;
+    height: 5px;
+    background: #007bff;
+    border-radius: 10px;
+  }
+  
+  .path-point {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 40px;
+  }
+  
+  .icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #007bff;
+    background: white;
+    padding: 10px;
+  }
+  
+  .video-container {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
