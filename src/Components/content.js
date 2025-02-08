@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import RobofyChat from "../chatbot";
+import RobofyChat from "../chatbot";
 
 const user = JSON.parse(sessionStorage.getItem('user'));   
 const Maindashboard = () => {
@@ -19,7 +19,7 @@ const Maindashboard = () => {
           <Container fluid>
         <Row className="mt-4 g-4">
           <Col lg={7} md={12}>
-{/* <RobofyChat style={{color:"red"}} /> */}
+ <RobofyChat style={{color:"red"}} />
             <Row className="g-4">
               <Col xs={12}>
                 <QuestionsChart />

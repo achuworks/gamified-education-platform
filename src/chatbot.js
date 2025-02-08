@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+
 const RobofyChat = () => {
   useEffect(() => {
     if (!document.getElementById("chatbotscript")) {
@@ -24,5 +25,6 @@ const RobofyChat = () => {
 
   return null;
 };
+
 
 export default RobofyChat;
