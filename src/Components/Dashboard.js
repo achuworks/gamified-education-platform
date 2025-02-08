@@ -2,7 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Trophy, BookOpen, LayoutDashboard, Award, Zap } from 'lucide-react';
+import { Trophy, BookOpen, LayoutDashboard, Award, Zap,Map,Flag,Target } from 'lucide-react';
 import logo from '../logo.png';
 import profile from '../ll.png';
 import './Dashstyle.css';
@@ -36,7 +36,11 @@ function Dashboard() {
                         </Nav.Link>
                         <Nav.Link className="text-light d-flex align-items-center">
                             <Award size={40} className="me-2 text-success" />
-                            Badges earned
+                            Badges
+                        </Nav.Link>
+                        <Nav.Link href='/roadmap' className="text-light d-flex align-items-center">
+                            <Flag size={40} className="me-2 text-info" />
+                            Roadmaps
                         </Nav.Link>
                     </Nav>
                     <div className="d-flex align-items-center gap-3">

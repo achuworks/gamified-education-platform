@@ -3,8 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../ll.png';
 
 const Stats = () => {
+  const loggedUser = JSON.parse(sessionStorage.getItem('user'));
   const user = {
-    username: 'Archana005',
+    username:loggedUser ? loggedUser.username : 'Guest', 
     role: 'MAGE',
     level: 9,
     xpProgress: 60,       
