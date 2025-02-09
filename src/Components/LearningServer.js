@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const API_KEY = ""; 
+const API_KEY = "AIzaSyDzOLF9W57BOnoohEeOfOhhCMNOUzn8ZbE"; 
 const YT_BASE_URL = "https://www.googleapis.com/youtube/v3/search";
 
 app.get("/api/videos/:topic", async (req, res) => {
